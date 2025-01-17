@@ -1,0 +1,18 @@
+Removing Elements:
+
+Using remove(): Removes the first occurrence of an element.
+
+
+my_list = [10, 20, 30, 20]
+my_list.remove(20)
+print(my_list)  # Output: [10, 30, 20]
+
+
+
+Using pop(): Removes and returns the element at the given index (or the last element by default).
+
+
+my_list = [10, 20, 30]
+popped_element = my_list.pop(1)
+print(my_list)  # Output: [10, 30]
+print(popped_element)  # Output: 20

@@ -1,0 +1,71 @@
+so when ever we call a function inside a 
+function we require a base so that we
+have a limit sort of thing to stop  .
+
+
+
+base cases in recursive functions
+are typically implemented using conditional statements
+like if (most common) or occasionally loops like while
+
+
+
+Let’s simplify recursion even more with an everyday example that might feel closer to home.
+
+Example: "Calling a Friend for Help"
+Imagine you are trying to find the answer to a tough question, but you don't know the answer.
+ So, you call your friend for help. Your friend also doesn’t know the answer, 
+ but they call their friend, and this continues until someone knows the answer. 
+ Once the person with the answer is found,
+ the solution is passed back up through all the friends to you.
+
+Here’s how it connects to recursion:
+
+Base Case (someone who knows the answer): This is the person in the chain who knows the answer.
+Once they give the solution, no more calls are made.
+Recursive Case (people who don’t know the answer): Everyone who doesn’t know the answer calls someone else,
+passing the problem along.
+How This Works in Recursion:
+If the person (function) doesn't know the answer, they ask someone else (call the function again).
+When the person who knows the answer (base case) is found,
+the solution is sent back to all the previous callers.
+Code Example:
+Let’s convert this into a code example where you want to know 
+"What’s 2 + 3?" but don’t know, so you keep asking until someone tells you the answer.
+
+
+def ask_friend(question, knows_answer):
+    if knows_answer:  # Base case: someone knows the answer
+        return "The answer is 5!"
+    else:
+        print(f"Calling another friend to answer: {question}")
+        return ask_friend(question, True)  # Next person knows the answer
+
+
+
+Explanation: The ask_friend function keeps calling another friend (itself)
+until someone knows the answer (the base case). Once the base case is hit,
+the answer is passed back through all the people.
+Real-Life Analogy:
+You: "I don’t know the answer. Let me call my friend."
+Your friend: "I also don’t know. Let me call someone else."
+Someone finally: "I know! The answer is 5!"
+This keeps going until someone knows, and then the answer goes back to the first person.
+
+Recursion in Super Simple Terms:
+Recursion is just asking for help over and over again until someone knows the solution (base case).
+Once the solution is found, it’s passed back up to everyone who asked for help.
+
+Does this example help clarify recursion for you?
+
+
+
+def factorial(n):
+    if n == 0:  # Base case
+        return 1
+    return n * factorial(n - 1)  # Recursive case
+
+print(factorial(5))  # Output: 120
+
+
+
